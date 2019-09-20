@@ -1,0 +1,14 @@
+table {
+  margin: 20px;
+  border-collapse:separate; 
+  border-spacing: 0 1em;
+}
+.border {
+  height:100px;
+  border: 1px solid rgba(53, 133, 109, 0.493);
+  text-align: center;
+}
+
+.my_button { display: inline-block; height: 100px; margin:10px;
+width:100px;
+cursor: pointer }
