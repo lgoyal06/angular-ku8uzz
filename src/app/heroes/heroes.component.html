@@ -1,6 +1,6 @@
 <h1>My Heroes</h1>
 <table>
-<tr *ngFor="let item of items" (click)="onSelect(item)" [class.highlighted]="item.id === selectedId" >{{item.name}}</tr>
+<tr *ngFor="let item of items" (click)="onSelect(item)" [class.highlighted]="item.id === selectedId" >{{item.id}}-{{item.name}}</tr>
 </table>
 
 <div *ngIf="selectedName">
