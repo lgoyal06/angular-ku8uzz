@@ -1,0 +1,10 @@
+tr { display: inline-block; 
+height: 30px;
+width:70px;
+cursor: pointer ;
+border:1px solid blue;
+}
+
+h1 {
+  text-align: center
+}

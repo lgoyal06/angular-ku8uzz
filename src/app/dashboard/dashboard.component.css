@@ -9,6 +9,11 @@ table {
   text-align: center;
 }
 
-.my_button { display: inline-block; height: 100px; margin:10px;
+button { display: inline-block; height: 100px; margin:10px;
 width:100px;
-cursor: pointer }
+cursor: pointer 
+}
+
+h1 {
+  text-align: center
+}

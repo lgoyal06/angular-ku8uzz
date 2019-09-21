@@ -35,36 +35,21 @@ items = [{
   }
   ];
 
-  topHeroes = [{
-    name: 'Narco',
-   id:1
-  },
- {
-    name: 'Bombasto',
-   id:2
-  },
- {
-    name: 'Celeritas',
-   id:3
-  },
-  {
-    name: 'Magneta',
-   id:4
-  }];
-
+  
   getHeroes() {
     return this.items;
   }
 
   getTopHeroes() {
-    return this.topHeroes;
+    return this.items.filter(items=>items.id < 5)
   }
 
   getHeroById(i:number) {
     return this.items.filter(items=>items.id === i)[0];
   }
   
-   updateHeroById() {
-    return this.http.get('/assets/shipping.json');
+   updateHeroById(itemToUpdate:object) {
+     console.log("Hello");
+     this.items.filter(items=>items.id === itemToUpdate.id)[0].name = itemToUpdate.name;
   }
 }

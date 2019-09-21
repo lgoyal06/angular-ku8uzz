@@ -1,0 +1,25 @@
+<form [formGroup]="viewForm">
+  
+<div>
+  <br/>
+    <label for="id">
+      Id
+    </label>
+    <label>
+    <input id="id" type="number" formControlName="id" readonly=true>
+    </label>
+
+  </div>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <label>
+    <input id="name" type="text" formControlName="name" readonly=true>
+    </label>
+  </div>
+
+  <button class="button"  [routerLink]="['/heroes']">Back</button>
+
+</form>

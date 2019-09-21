@@ -1,0 +1,33 @@
+
+<p>
+  {{ editForm.value.name }} details!
+</p>
+<form [formGroup]="editForm">
+  
+<div>
+  {{editForm.name}}
+  <br/>
+    <label for="id">
+      Id
+    </label>
+    <label>
+    <input id="id" type="number" formControlName="id" readonly=true>
+    </label>
+
+  </div>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <label>
+    <input id="name" type="text" formControlName="name" (change)="saveit()">
+    </label>
+    <div class="error" *ngIf="editForm.get('name').touched && editForm.get('name').hasError('required')">
+    Name is required field
+  </div>
+  </div>
+
+  <button class="button" [disabled]="!editForm.valid" [routerLink]="['/dashboard']">Back</button>
+
+</form>

@@ -19,7 +19,7 @@ import { HeroesService } from './heroes.service';
     {path:'dashboard', component : DashboardComponent},
     {path:'heroes', component : HeroesComponent},
     {path:'editDetails/:heroId', component : HeroDetailEditComponent},
-    {path:'viewDetails', component : HeroDetailComponent},
+    {path:'viewDetails/:heroId', component : HeroDetailComponent},
     ]) ],
   declarations: [ AppComponent, TopBarComponent, DashboardComponent, HeroesComponent, HeroDetailComponent, HeroDetailEditComponent ],
   bootstrap:    [ AppComponent ],
