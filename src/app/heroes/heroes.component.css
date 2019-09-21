@@ -8,3 +8,10 @@ border:1px solid blue;
 h1 {
   text-align: center
 }
+
+.highlighted {
+background-color: greenyellow;
+}
+.pointer{
+cursor: pointer;
+}
