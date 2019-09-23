@@ -21,9 +21,7 @@ onSelect(item){
 
 }
   ngOnInit() {
-
-    this.items = this.heroesService.getHeroes().subscribe{
-      ;
+    this.heroesService.getHeroes().subscribe(items => this.items = items);
   }
 
 }

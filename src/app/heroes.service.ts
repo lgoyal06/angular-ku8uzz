@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, } from 'rxjs';
+import { concatMap, map, merge, switchMap, tap, delay, skip } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,28 @@ export class HeroesService {
   constructor(private http: HttpClient) {
     
    }
+
+items=[
+  {
+    "name": "Narco1",
+    "id": 1
+  },
+  {
+    "name": "Bom1basto",
+    "id": 2
+  },
+  {
+    "name": "Celweritas",
+    "id": 3
+  },
+  {
+    "name": "Magneta",
+    "id": 4
+  }
+]
   
   getHeroes():Observable<Object> {
-    return this.http.get('/assets/heroes.json');
+    return this.http.get('/assets/heroes.json')
   }
 
   getTopHeroes():Observable<Object> {
@@ -21,10 +41,8 @@ export class HeroesService {
     return this.http.get('/assets/heroes.json');
   }
 
-  getHeroById(i:number):Observable<Array<Object>>  {
-    
-    var obj= this.http.get('/assets/heroes.json')
-    return obj.filter(items=>items.id === i)[0];
+  getHeroById(i:number) {
+    return this.items.filter(items=>items.id === i)[0];
   }
   
    updateHeroById(itemToUpdate:object) {
