@@ -19,7 +19,9 @@ saveit(){
 }
   ngOnInit() {
      this.route.paramMap.subscribe(params => {
+       alert(parseInt(params.get('heroId')))
         this.hero = this.heroesService.getHeroById(parseInt(params.get('heroId')));
+        alert(this.hero.id);
           this.editForm = this.formBuilder.group({
             id: [this.hero.id],
             name: [this.hero.name, Validators.required],

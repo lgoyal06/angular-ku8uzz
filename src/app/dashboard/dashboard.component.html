@@ -1,2 +1,2 @@
 <h1>Top Heroes</h1>
-<button *ngFor="let item of items; index as heroId" [routerLink]="['/editDetails', item.id]">{{item.name}}</button>
+<button *ngFor="let item of items$ " [routerLink]="['/editDetails', item.id]">{{item.name}}</button>

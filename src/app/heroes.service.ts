@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Observable, of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,43 +11,20 @@ export class HeroesService {
   constructor(private http: HttpClient) {
     
    }
-items = [{
-    name: 'Narco',
-   id:1
-  },
- {
-    name: 'Bombasto',
-   id:2
-  },
- {
-    name: 'Celeritas',
-   id:3
-  },
-  {
-    name: 'Magneta',
-   id:4
-  },
-  {
-    name: 'Magneta1',
-   id:6
-  },
-  {
-    name: 'Magneta2',
-   id:7
-  }
-  ];
-
   
-  getHeroes() {
-    return this.items;
+  getHeroes():Observable<Object> {
+    return this.http.get('/assets/heroes.json');
   }
 
-  getTopHeroes() {
-    return this.items.filter(items=>items.id < 5)
+  getTopHeroes():Observable<Object> {
+    //return this.items.filter(items=>items.id < 5)
+    return this.http.get('/assets/heroes.json');
   }
 
-  getHeroById(i:number) {
-    return this.items.filter(items=>items.id === i)[0];
+  getHeroById(i:number):Observable<Array<Object>>  {
+    
+    var obj= this.http.get('/assets/heroes.json')
+    return obj.filter(items=>items.id === i)[0];
   }
   
    updateHeroById(itemToUpdate:object) {

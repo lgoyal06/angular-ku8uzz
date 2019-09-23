@@ -7,12 +7,14 @@ import { HeroesService } from '../heroes.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-items;
+items$:[];
   constructor(private heroesService: HeroesService,) { 
-    this.items = this.heroesService.getTopHeroes();
+   
   }
 
   ngOnInit() {
+     this.heroesService.getTopHeroes()
+      .subscribe(items$ => this.items$ = items$);
   }
 
 }
