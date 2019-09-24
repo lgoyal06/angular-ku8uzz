@@ -11,6 +11,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroDetailEditComponent } from './hero-detail-edit/hero-detail-edit.component';
 import { HeroesService } from './heroes.service';
+import { LogMessageService } from './log-message.service';
 
 @NgModule({
   imports:      [ BrowserModule, ReactiveFormsModule,HttpClientModule,
@@ -23,6 +24,6 @@ import { HeroesService } from './heroes.service';
     ]) ],
   declarations: [ AppComponent, TopBarComponent, DashboardComponent, HeroesComponent, HeroDetailComponent, HeroDetailEditComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [HeroesService]
+  providers: [HeroesService, LogMessageService]
 })
 export class AppModule { }
